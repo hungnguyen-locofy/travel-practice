@@ -1,20 +1,19 @@
 import type { NextPage } from "next";
-import { useMemo } from "react";
-import CSS, { Property } from "csstype";
+import { useMemo, CSSProperties } from "react";
 
 type HizmetKoduButtonType = {
   serviceCode?: string;
 
   /** Style props */
-  hizmetKoduButtonPosition?: Property.Position;
-  hizmetKoduButtonBorder?: Property.Border;
-  hizmetKoduButtonJustifyContent?: Property.JustifyContent;
-  hizmetKoduButtonWidth?: Property.Width;
-  hizmetKoduButtonTop?: Property.Top;
-  hizmetKoduButtonRight?: Property.Right;
-  hizmetKoduButtonLeft?: Property.Left;
-  hizmetKoduFontSize?: Property.FontSize;
-  hizmetKoduFontWeight?: Property.FontWeight;
+  hizmetKoduButtonPosition?: CSSProperties["position"];
+  hizmetKoduButtonBorder?: CSSProperties["border"];
+  hizmetKoduButtonJustifyContent?: CSSProperties["justifyContent"];
+  hizmetKoduButtonWidth?: CSSProperties["width"];
+  hizmetKoduButtonTop?: CSSProperties["top"];
+  hizmetKoduButtonRight?: CSSProperties["right"];
+  hizmetKoduButtonLeft?: CSSProperties["left"];
+  hizmetKoduFontSize?: CSSProperties["fontSize"];
+  hizmetKoduFontWeight?: CSSProperties["fontWeight"];
 };
 
 const HizmetKoduButton: NextPage<HizmetKoduButtonType> = ({
@@ -29,7 +28,7 @@ const HizmetKoduButton: NextPage<HizmetKoduButtonType> = ({
   hizmetKoduFontSize,
   hizmetKoduFontWeight,
 }) => {
-  const hizmetKoduButtonStyle: CSS.Properties = useMemo(() => {
+  const hizmetKoduButtonStyle: CSSProperties = useMemo(() => {
     return {
       position: hizmetKoduButtonPosition,
       border: hizmetKoduButtonBorder,
@@ -49,7 +48,7 @@ const HizmetKoduButton: NextPage<HizmetKoduButtonType> = ({
     hizmetKoduButtonLeft,
   ]);
 
-  const hizmetKoduStyle: CSS.Properties = useMemo(() => {
+  const hizmetKoduStyle: CSSProperties = useMemo(() => {
     return {
       fontSize: hizmetKoduFontSize,
       fontWeight: hizmetKoduFontWeight,

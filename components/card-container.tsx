@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
-import { useMemo } from "react";
-import CSS, { Property } from "csstype";
+import { useMemo, CSSProperties } from "react";
 
 type CardContainerType = {
   dimensionCode?: string;
@@ -10,9 +9,9 @@ type CardContainerType = {
   dealDescription?: string;
 
   /** Style props */
-  propBackgroundImage?: Property.BackgroundImage;
-  propWidth?: Property.Width;
-  propHeight?: Property.Height;
+  propBackgroundImage?: CSSProperties["backgroundImage"];
+  propWidth?: CSSProperties["width"];
+  propHeight?: CSSProperties["height"];
 };
 
 const CardContainer: NextPage<CardContainerType> = ({
@@ -25,13 +24,13 @@ const CardContainer: NextPage<CardContainerType> = ({
   propWidth,
   propHeight,
 }) => {
-  const frameDivStyle: CSS.Properties = useMemo(() => {
+  const frameDivStyle: CSSProperties = useMemo(() => {
     return {
       backgroundImage: propBackgroundImage,
     };
   }, [propBackgroundImage]);
 
-  const image19IconStyle: CSS.Properties = useMemo(() => {
+  const image19IconStyle: CSSProperties = useMemo(() => {
     return {
       width: propWidth,
       height: propHeight,
